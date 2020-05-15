@@ -11,42 +11,24 @@ using System.Windows.Forms;
 
 namespace Zadanie18_KoloroweKwadraty
 {
-    public partial class MainForm : Form
+    public partial class mainForm : Form
     {
 
         public int rgbR, rgbG, rgbB;
 
-        public MainForm()
+        public mainForm()
         {
             InitializeComponent();
         }
 
 
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            SquareColorChange();
-            Thread.Sleep(150);
-            SquareColorChange();
-            Thread.Sleep(150);
-            SquareColorChange();
-
-        }
-
-       
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SquareColorChange();
-        
-        }
-
        
         private void timer1_Tick(object sender, EventArgs e)
         {
             SquareColorChange();
+            SquareLocationChange();
+            FormColorChange();
         }
-
 
 
 
@@ -55,10 +37,28 @@ namespace Zadanie18_KoloroweKwadraty
         public void SquareColorChange()
         {
             
-            rgbR = random.Next(0, 255);
-            rgbG = random.Next(0, 255);
-            rgbB = random.Next(0, 255);
+            rgbR = random.Next(0, 256);
+            rgbG = random.Next(0, 256);
+            rgbB = random.Next(0, 256);
             pnl_Square.BackColor = Color.FromArgb(rgbR, rgbG, rgbB);
+        }
+
+        public void SquareLocationChange()
+        {
+            int X, Y;
+            X = random.Next(10, 611);
+            Y = random.Next(10, 411);
+
+            pnl_Square.Location = new System.Drawing.Point(X, Y);
+        }
+
+        public void FormColorChange()
+        {
+            rgbR = 255 - rgbR;
+            rgbG = 255 - rgbG;
+            rgbB = 255 - rgbB;
+            this.BackColor = System.Drawing.Color.FromArgb(rgbR, rgbG, rgbB);
+
         }
     }
 }

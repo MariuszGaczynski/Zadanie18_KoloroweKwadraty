@@ -1,6 +1,6 @@
 ﻿namespace Zadanie18_KoloroweKwadraty
 {
-    partial class MainForm
+    partial class mainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,45 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pnl_Square = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pnl_Square = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 200;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pnl_Square
             // 
             this.pnl_Square.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pnl_Square.Location = new System.Drawing.Point(10, 10);
+            this.pnl_Square.Location = new System.Drawing.Point(610, 410);
             this.pnl_Square.Name = "pnl_Square";
             this.pnl_Square.Size = new System.Drawing.Size(100, 100);
-            this.pnl_Square.TabIndex = 0;
+            this.pnl_Square.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(433, 406);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 150;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // MainForm
+            // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 482);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(720, 520);
             this.Controls.Add(this.pnl_Square);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(720, 520);
-            this.MinimumSize = new System.Drawing.Size(720, 520);
-            this.Name = "MainForm";
+            this.MaximumSize = new System.Drawing.Size(736, 558);
+            this.MinimumSize = new System.Drawing.Size(736, 558);
+            this.Name = "mainForm";
             this.ShowIcon = false;
             this.Text = "Bouncing Square";
             this.Load += new System.EventHandler(this.timer1_Tick);
@@ -76,10 +66,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnl_Square;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel pnl_Square;
     }
 }
 
